@@ -1,0 +1,8 @@
+{% assign nav_url = page.url | default: "/" %}
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="nav-link{% if nav_url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+  <a class="nav-link{% if nav_url == '/posts/' or nav_url contains '/posts/' %} is-active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
+  <a class="nav-link{% if nav_url == '/categories/' %} is-active{% endif %}" href="{{ '/categories/' | relative_url }}">Categories</a>
+  <a class="nav-link{% if nav_url == '/tags/' %} is-active{% endif %}" href="{{ '/tags/' | relative_url }}">Tags</a>
+  <a class="nav-link{% if nav_url == '/about/' %} is-active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+</nav>
